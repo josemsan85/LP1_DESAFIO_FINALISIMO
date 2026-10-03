@@ -1,4 +1,4 @@
-package CENTRO_SALUD;
+package Centro_Salud;
 
 public class FUA {
     private String idFUA;
