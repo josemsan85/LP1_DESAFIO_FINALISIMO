@@ -31,6 +31,19 @@ public class Ejecucion {
                 "Migraña", "Consulta ambulatoria", atencion);
        
         atencion.setFua(fua);
+        atencion.setFua(fua);
+
+        // 5.1 Generar receta medica asociada a la atencion
+        RecetaMedica receta = new RecetaMedica(
+                "REC001", "2026-09-12", "Tomar con alimentos, reposo 24h", atencion);
+        receta.agregarMedicamento("Paracetamol 500mg - cada 8h por 3 dias");
+        receta.agregarMedicamento("Ibuprofeno 400mg - solo si persiste el dolor");
+        atencion.agregarReceta(receta);
+
+        // 5.2 Registrar una cita futura de control
+        Cita cita = new Cita("CITA001", "2026-09-19", "10:00", paciente, profesional);
+        paciente.agregarCita(cita);
+        profesional.agregarCita(cita);
  
         // 6. Mostrar el resultado
         System.out.println("=== Paciente ===");
@@ -53,5 +66,14 @@ public class Ejecucion {
         System.out.println("\n=== Documentos generados ===");
         System.out.println("FUA id: " + atencion.getFua().getIdFUA()
                 + " | servicio: " + atencion.getFua().getServicio());
+    }
+}
+
+        System.out.println("\n=== Receta medica ===");
+        System.out.println(receta);
+        System.out.println("Medicamentos: " + receta.getMedicamentos());
+
+        System.out.println("\n=== Cita registrada ===");
+        System.out.println(cita);
     }
 }
