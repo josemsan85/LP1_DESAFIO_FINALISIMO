@@ -29,11 +29,8 @@ public class Ejecucion {
         FUA fua = new FUA(
                 "FUA001", "2026-09-12", "Medicina General",
                 "Migraña", "Consulta ambulatoria", atencion);
-        HIS his = new HIS(
-                "HIS001", "2026-09-12", "00123",
-                "G43", "Medicina General", atencion);
+       
         atencion.setFua(fua);
-        atencion.setHis(his);
  
         // 6. Mostrar el resultado
         System.out.println("=== Paciente ===");
@@ -56,7 +53,5 @@ public class Ejecucion {
         System.out.println("\n=== Documentos generados ===");
         System.out.println("FUA id: " + atencion.getFua().getIdFUA()
                 + " | servicio: " + atencion.getFua().getServicio());
-        System.out.println("HIS id: " + atencion.getHis().getIdHIS()
-                + " | codigo diagnostico: " + atencion.getHis().getCodigoDiagnostico());
     }
 }
