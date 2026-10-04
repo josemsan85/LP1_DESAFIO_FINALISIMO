@@ -29,8 +29,6 @@ public class Ejecucion {
         FUA fua = new FUA(
                 "FUA001", "2026-09-12", "Medicina General",
                 "Migraña", "Consulta ambulatoria", atencion);
-       
-        atencion.setFua(fua);
         atencion.setFua(fua);
 
         // 5.1 Generar receta medica asociada a la atencion
@@ -66,8 +64,6 @@ public class Ejecucion {
         System.out.println("\n=== Documentos generados ===");
         System.out.println("FUA id: " + atencion.getFua().getIdFUA()
                 + " | servicio: " + atencion.getFua().getServicio());
-    }
-}
 
         System.out.println("\n=== Receta medica ===");
         System.out.println(receta);
